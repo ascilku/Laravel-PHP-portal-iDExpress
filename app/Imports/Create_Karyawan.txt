@@ -1,0 +1,96 @@
+<?php
+
+namespace App\Imports;
+
+use App\Models\M_Akun               as Akun;
+use Maatwebsite\Excel\Concerns\ToModel;
+use Maatwebsite\Excel\Concerns\WithHeadingRow;
+
+class Create_Karyawan implements ToModel, WithHeadingRow
+{
+    public function model(array $row)
+    {
+        return new Akun ([
+            'nominal_gaji'  => $row['nominal_gaji'],
+            'status' => $row['status']
+        ]);
+    }
+
+    
+    // public function model(array $rows)
+    // {
+    //     foreach ($rows as $row) 
+    //     { 
+    //         $model_Akun = new Gaji();
+    //             $model_Akun->nominal_gaji = $row['nominal_gaji'];
+    //             $model_Akun->status = $row['status'];
+    //         $model_Akun->save();
+    //     }
+    // }
+
+    //     dd($row);
+        // return new Gaji([
+        //     'nominal_gaji' => $row[1],
+        //     'status' => $row[2], 
+        // ]);
+           
+        // foreach ($rows as $key => $row) 
+        // { 
+            
+            
+
+        //     echo $row;
+            
+            // Akun::create([
+            //     'id_akses'          => null,
+            //     'id_perusahaan'     => null,
+            //     'nik'               => $row[0],
+            //     'password'          => $row[1],
+            //     'show_pass'         => $row[2],
+            //     'email'             => $row[3],
+            //     'no_hp'             => $row[4],
+            //     'status'            => $row[5]
+            // ]);
+
+            // $model_Akun = new Gaji();
+            //     $model_Akun->nominal_gaji = $row;
+            //     $model_Akun->status = $row;
+            // $model_Akun->save();
+
+            // $model_Akun = new Akun();
+
+            // $model_Akun->id_akses = 10;
+                
+            // $model_Akun->id_perusahaan = 2;
+            
+            // $model_Akun->nik = (isset($row['0']) && $row['0']!='') ? $row['0'] : "null";
+            
+            // $model_Akun->password = (isset($row['1']) && $row['1']!='') ? $row['1'] : "null";
+            // $model_Akun->show_pass = (isset($row['2']) && $row['2']!='') ? $row['2'] : "null";
+            // $model_Akun->email = (isset($row['3']) && $row['3']!='') ? $row['3'] : "null";
+            // $model_Akun->no_hp = (isset($row['4']) && $row['4']!='') ? $row['4'] : "null";
+            // $model_Akun->status = (isset($row['5']) && $row['5']!='') ? $row['5'] : "null";
+
+            // $model_Akun->save();
+
+            // Contact::create([
+            //     'institution' => $row[3],
+            //     'type' => $row[4],
+            //     'address' => $row[5],
+            // ]);
+        // }
+        // echo "<br>";
+
+        // return new Akun([
+        //     'id_akses'          => null,
+        //     'id_perusahaan'     => null,
+        //     'nik'               => $row[0],
+        //     'password'          => $row[1],
+        //     'show_pass'         => $row[2],
+        //     'email'             => $row[3],
+        //     'no_hp'             => $row[4],
+        //     'status'            => $row[5]
+        // ]);
+        // dd($row[0]);
+    // }
+}
